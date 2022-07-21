@@ -24,8 +24,9 @@ RUN curl -fOL https://github.com/coder/code-server/releases/download/v${CODE_SER
     # Fix permissions
     chown -R ${USERNAME}:${GROUPNAME} ${HOME} && \
     # old Lab 0 installation of R and cython instructions
-    sudo yum install -y python3-devel.x86_64 && \
-    apt-get update && apt-get install -y r-base && \
+    apt-get update && \
+    apt-get install -y python3-devel.x86_64 && \
+    apt-get install -y r-base && \
     #installer Cython
     pip install Cython && \
     cd cythond_code && \
