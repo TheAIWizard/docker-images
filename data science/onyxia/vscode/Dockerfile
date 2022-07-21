@@ -22,7 +22,11 @@ RUN curl -fOL https://github.com/coder/code-server/releases/download/v${CODE_SER
     # Set Conda binary path in remote settings to auto activate base env when running Python code
     echo "{\"python.condaPath\": \"${HOME}/mambaforge/bin/conda\"}" > ${REMOTE_CONFIG_DIR}/settings.json && \
     # Fix permissions
-    chown -R ${USERNAME}:${GROUPNAME} ${HOME}
+    chown -R ${USERNAME}:${GROUPNAME} ${HOME} && \
+    # old Lab 0 installation of R and cython instructions
+    sudo yum install -y python3-devel.x86_64 && \
+    apt-get update && apt-get install -y r-base
+
 
 # Copy custom VSCode User settings
 COPY --chown=${USERNAME}:${GROUPNAME} settings/User.json ${USER_CONFIG_DIR}/settings.json
