@@ -8,5 +8,3 @@ RUN apt-get update && \
     apt-get install -y r-base openjdk-11-jre-headless && \
     #installer Cython
     pip install Cython 
-
-USER ${USERNAME}
