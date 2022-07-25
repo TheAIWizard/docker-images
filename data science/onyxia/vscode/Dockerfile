@@ -1,4 +1,5 @@
 FROM inseefrlab/onyxia-vscode-python:latest
+# open bash shell to interact with the container (shabang)
 SHELL ["/bin/bash", "-c"]
 
 USER root
